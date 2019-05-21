@@ -16,6 +16,7 @@ public class VendingMachineService {
     public Product getProduct(String name) {
         return repository.getProduct(name);
     }
+
     public void removeProduct(Product product) {
         repository.removeProduct(product);
     }
@@ -29,8 +30,8 @@ public class VendingMachineService {
         repository = new Repository();
     }
 
-    public Double getChange(Double paid, Double price){
-        return paid-price;
+    public Double getChange(Double paid, Double price) {
+        return paid - price;
     }
 
     public List<Product> getProducts() {

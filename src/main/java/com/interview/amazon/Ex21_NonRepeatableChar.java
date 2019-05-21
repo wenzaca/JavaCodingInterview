@@ -28,20 +28,20 @@ Read more: https://javarevisited.blogspot.com/2014/03/3-ways-to-find-first-non-r
 public class Ex21_NonRepeatableChar {
 
     public static void main(String[] args) {
-        Scanner sc  = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String word = sc.next();
         Ex21_NonRepeatableChar ex21 = new Ex21_NonRepeatableChar();
         System.out.println(ex21.solution(word));
     }
 
-    public String solution(String word){
+    public String solution(String word) {
         Map<Character, Integer> map = new LinkedHashMap<>(word.length());
         LinkedList<Character> characters = new LinkedList<>();
 
         char[] chars = word.toCharArray();
-        for(Character c : chars){
+        for (Character c : chars) {
 
-            map.computeIfPresent(c, (key,value) -> {
+            map.computeIfPresent(c, (key, value) -> {
                 characters.removeFirstOccurrence(key);
                 return value + 1;
             });
@@ -50,26 +50,26 @@ public class Ex21_NonRepeatableChar {
                 return 1;
             });
         }
-        if(characters.isEmpty()) return "";
+        if (characters.isEmpty()) return "";
         return characters.getFirst().toString();
 
     }
 
-    public String solution2(String word){
+    public String solution2(String word) {
         Map<Character, Integer> map = new LinkedHashMap<>(word.length());
 
         char[] chars = word.toCharArray();
-        for(Character c : chars){
+        for (Character c : chars) {
 
-            map.computeIfPresent(c, (key,value) -> {
+            map.computeIfPresent(c, (key, value) -> {
                 return value + 1;
             });
             map.computeIfAbsent(c, key -> {
                 return 1;
             });
         }
-        for(Map.Entry<Character,Integer> entry : map.entrySet()){
-            if(entry.getValue()==1){
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == 1) {
                 return entry.getKey().toString();
             }
         }
@@ -79,7 +79,7 @@ public class Ex21_NonRepeatableChar {
 
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
         Assert.assertThat(solution("abcdefghijklmnopqrstuvxa123456789"), is("b"));
         Assert.assertThat(solution("aabbccded"), is("e"));
         Assert.assertThat(solution("abcdeeabc"), is("d"));
@@ -87,7 +87,7 @@ public class Ex21_NonRepeatableChar {
     }
 
     @Test
-    public void testSolution2(){
+    public void testSolution2() {
         Assert.assertThat(solution2("abcdefghijklmnopqrstuvxa123456789"), is("b"));
         Assert.assertThat(solution2("aabbccded"), is("e"));
         Assert.assertThat(solution2("abcdeeabc"), is("d"));

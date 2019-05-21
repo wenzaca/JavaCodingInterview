@@ -14,7 +14,7 @@ public class Repository {
         vendingMachine = new VendingMachine(new ArrayList<>());
     }
 
-    public void addProduct(Product product){
+    public void addProduct(Product product) {
         vendingMachine.getProducts().add(product);
     }
 
@@ -33,7 +33,7 @@ public class Repository {
         }
     }
 
-    public void removeProduct(Product product){
+    public void removeProduct(Product product) {
         vendingMachine.getProducts().remove(product);
     }
 

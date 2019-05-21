@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -26,19 +24,19 @@ Read more: http://www.java67.com/2015/10/how-to-print-pyramid-pattern-in-java-ex
 public class Ex10_PrintingPattern {
 
     public static void main(String[] args) {
-        Scanner sc  = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int number = Integer.parseInt(sc.next());
         Ex10_PrintingPattern ex10_printingPattern = new Ex10_PrintingPattern();
         ex10_printingPattern.solution(number);
     }
 
-    public void solution(int number){
+    public void solution(int number) {
 
         String star = "* ";
 
 
-        for(int i=0;i<number;i++){
-            for(int j=0;j<(number-i);j++){
+        for (int i = 0; i < number; i++) {
+            for (int j = 0; j < (number - i); j++) {
                 System.out.print(" ");
             }
             System.out.print(star);
@@ -49,7 +47,7 @@ public class Ex10_PrintingPattern {
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
 
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));

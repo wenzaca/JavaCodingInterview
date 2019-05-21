@@ -3,8 +3,6 @@ package com.interview.amazon;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-
 import java.util.Arrays;
 
 /*
@@ -27,7 +25,7 @@ public class Ex30_SortArrayQuickSort {
      */
 
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         // unsorted integer array
         Integer[] unsorted = {6, 5, 3, 1, 8, 7, 2, 4};
@@ -63,10 +61,10 @@ public class Ex30_SortArrayQuickSort {
         algorithm.sort(array6);
 
 
-        Assert.assertArrayEquals(array1, new Integer[]{1,2,3,4,5});
-        Assert.assertArrayEquals(array2, new Integer[]{1,2,3,4,5});
-        Assert.assertArrayEquals(array3, new Integer[]{1,2,3,4,5,6});
-        Assert.assertArrayEquals(array4, new Integer[]{1,2,3,4});
+        Assert.assertArrayEquals(array1, new Integer[]{1, 2, 3, 4, 5});
+        Assert.assertArrayEquals(array2, new Integer[]{1, 2, 3, 4, 5});
+        Assert.assertArrayEquals(array3, new Integer[]{1, 2, 3, 4, 5, 6});
+        Assert.assertArrayEquals(array4, new Integer[]{1, 2, 3, 4});
         Assert.assertArrayEquals(array5, new Integer[]{});
         Assert.assertArrayEquals(array6, null);
 
@@ -76,7 +74,7 @@ public class Ex30_SortArrayQuickSort {
 
 class QuickSort {
 
-    private Integer input[];
+    private Integer[] input;
     private int length;
 
     public void sort(Integer[] numbers) {

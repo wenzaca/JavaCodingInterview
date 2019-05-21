@@ -19,13 +19,13 @@ questions from Java interviews.
 Read more: https://javarevisited.blogspot.com/2017/07/top-50-java-programs-from-coding-Interviews.html#ixzz5nDTSFbko
  */
 public class Ex9_RemoveDuplicate {
-    public Object[] solution(Object[] array){
+    public Object[] solution(Object[] array) {
         Map<Object, String> map = new HashMap<>();
         Object[] res = new Object[array.length];
-        for(int i=0;i<array.length;i++){
+        for (int i = 0; i < array.length; i++) {
             map.computeIfAbsent(array[i], key -> {
                 map.put(key, "");
-                res[map.size()/2] = key;
+                res[map.size() / 2] = key;
                 return "";
             });
         }
@@ -34,9 +34,9 @@ public class Ex9_RemoveDuplicate {
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
         Assert.assertThat(solution(new Integer[]{1, 2, 2, 3, 4, 5, 2, 6})[2].toString(), is(String.valueOf(3)));
-        Assert.assertThat(solution(new String[]{"hi","hello","hi","hole","hey", "hey"})[2].toString(), is("hole"));
-        Assert.assertThat(solution(new Character[]{'h','o','i','h','y','y'})[3].toString(), is("y"));
+        Assert.assertThat(solution(new String[]{"hi", "hello", "hi", "hole", "hey", "hey"})[2].toString(), is("hole"));
+        Assert.assertThat(solution(new Character[]{'h', 'o', 'i', 'h', 'y', 'y'})[3].toString(), is("y"));
     }
 }

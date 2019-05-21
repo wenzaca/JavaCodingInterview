@@ -3,10 +3,6 @@ package com.interview.amazon;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -29,22 +25,22 @@ Read more: http://www.java67.com/2012/08/java-program-to-find-gcd-of-two-numbers
 public class Ex12_GreatestCommomDivisor {
 
     public static void main(String[] args) {
-        Scanner sc  = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("First number: ");
         Integer number1 = Integer.parseInt(sc.next());
         System.out.print("Second number: ");
         Integer number2 = Integer.parseInt(sc.next());
         Ex12_GreatestCommomDivisor ex12_GreatestCommomDivisor = new Ex12_GreatestCommomDivisor();
-        System.out.println(ex12_GreatestCommomDivisor.solution(number1,number2));
+        System.out.println(ex12_GreatestCommomDivisor.solution(number1, number2));
     }
 
-    public int solution(int number1, int number2){
+    public int solution(int number1, int number2) {
         int divisor;
-        if(number1 == 0 || number2==0) return 0;
-        if(number1==1 || number2==1) return 1;
-        if(number1==number2) return number1;
+        if (number1 == 0 || number2 == 0) return 0;
+        if (number1 == 1 || number2 == 1) return 1;
+        if (number1 == number2) return number1;
         while (number1 != number2) {
-            if(number1 > number2)
+            if (number1 > number2)
                 number1 = number1 - number2;
             else
                 number2 = number2 - number1;
@@ -54,14 +50,14 @@ public class Ex12_GreatestCommomDivisor {
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
 
-        Assert.assertThat(solution(4,8), is(4));
-        Assert.assertThat(solution(1,0), is(0));
-        Assert.assertThat(solution(500,500), is(500));
-        Assert.assertThat(solution(256,8), is(8));
-        Assert.assertThat(solution(1,8), is(1));
-        Assert.assertThat(solution(15,60), is(15));
+        Assert.assertThat(solution(4, 8), is(4));
+        Assert.assertThat(solution(1, 0), is(0));
+        Assert.assertThat(solution(500, 500), is(500));
+        Assert.assertThat(solution(256, 8), is(8));
+        Assert.assertThat(solution(1, 8), is(1));
+        Assert.assertThat(solution(15, 60), is(15));
 
 
     }

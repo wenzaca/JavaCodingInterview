@@ -1,6 +1,5 @@
 package com.interview.amazon.glassdoor;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.RegularExpression;
 import org.junit.Assert;
 import org.junit.Test;
 

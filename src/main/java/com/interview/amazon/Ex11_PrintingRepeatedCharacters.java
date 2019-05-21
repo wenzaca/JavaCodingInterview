@@ -22,18 +22,18 @@ Read more: https://javarevisited.blogspot.com/2017/07/top-50-java-programs-from-
 public class Ex11_PrintingRepeatedCharacters {
 
     public static void main(String[] args) {
-        Scanner sc  = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String word = sc.next();
         Ex11_PrintingRepeatedCharacters ex11_PrintingRepeatedCharacters = new Ex11_PrintingRepeatedCharacters();
         ex11_PrintingRepeatedCharacters.solution(word);
     }
 
-    public void solution(String word){
+    public void solution(String word) {
 
         char[] chars = word.trim().toCharArray();
         Map<Character, Integer> hashMap = new HashMap<>();
 
-        for(int i=0;i<chars.length;i++){
+        for (int i = 0; i < chars.length; i++) {
             hashMap.computeIfPresent(chars[i], (key, value) -> {
                 System.out.println(key);
                 value += 1;
@@ -44,11 +44,10 @@ public class Ex11_PrintingRepeatedCharacters {
         }
 
 
-
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
 
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));

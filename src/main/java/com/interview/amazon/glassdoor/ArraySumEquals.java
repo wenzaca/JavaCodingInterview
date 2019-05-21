@@ -14,7 +14,7 @@ public class ArraySumEquals {
         System.out.print("Type the array size: ");
         Integer number = Integer.parseInt(sc.next());
         Integer[] integers = new Integer[number];
-        for(int i = 0; i < number; i++){
+        for (int i = 0; i < number; i++) {
             integers[i] = Integer.parseInt(sc.next());
         }
         System.out.print("Type the sum number: ");
@@ -29,9 +29,9 @@ public class ArraySumEquals {
     public List<Integer[]> solution(Integer[] numbers, Integer sum) {
         if (numbers.length == 0 || sum == null) return Collections.EMPTY_LIST;
         List<Integer[]> result = new ArrayList<>(numbers.length);
-        for(int i =0 ; i < numbers.length-1; i++){
-            for(int j = i+1; j< numbers.length; j++){
-                if(numbers[j]+numbers[i] == sum){
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[j] + numbers[i] == sum) {
                     result.add(new Integer[]{numbers[i], numbers[j]});
                 }
             }
@@ -54,8 +54,8 @@ public class ArraySumEquals {
         Assert.assertThat(solution2.get(0), is(integers2.get(0)));
         Assert.assertThat(solution2.get(1), is(integers2.get(1)));
         Assert.assertThat(solution(new Integer[]{}, 5), is(Collections.EMPTY_LIST));
-        Assert.assertThat(solution(new Integer[]{1,2,3,4,5}, 0), is(Collections.EMPTY_LIST));
-        Assert.assertThat(solution(new Integer[]{1,2,3,4,5}, 15), is(Collections.EMPTY_LIST));
-        Assert.assertThat(solution(new Integer[]{1,2,3,4,5}, 3).get(0), is(new Integer[]{1,2}));
+        Assert.assertThat(solution(new Integer[]{1, 2, 3, 4, 5}, 0), is(Collections.EMPTY_LIST));
+        Assert.assertThat(solution(new Integer[]{1, 2, 3, 4, 5}, 15), is(Collections.EMPTY_LIST));
+        Assert.assertThat(solution(new Integer[]{1, 2, 3, 4, 5}, 3).get(0), is(new Integer[]{1, 2}));
     }
 }

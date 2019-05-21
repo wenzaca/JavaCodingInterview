@@ -3,8 +3,6 @@ package com.interview.amazon;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
-
 /*
 Quicksort algorithm is one of the most used sorting algorithm, especially to sort large list and
 most of the programming languages, library have implemented it in one or another way. In Java,
@@ -25,7 +23,7 @@ public class Ex34_StringPermutation {
      */
     String[] res;
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
 //        // unsorted integer array
 //        Integer[] unsorted = {6, 5, 3, 1, 8, 7, 2, 4};
@@ -54,8 +52,8 @@ public class Ex34_StringPermutation {
         if (word.isEmpty()) {
             System.err.println(perm + word);
         } else {
-            for (int i = 0; i<=word.length(); i++){
-                permutation(perm + word.charAt(i), word.substring(0, i) + word.substring(i + 1, word.length()));
+            for (int i = 0; i <= word.length(); i++) {
+                permutation(perm + word.charAt(i), word.substring(0, i) + word.substring(i + 1));
             }
         }
     }

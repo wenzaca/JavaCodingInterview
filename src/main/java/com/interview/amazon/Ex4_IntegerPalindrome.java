@@ -15,23 +15,23 @@ the number and modulus 10 to get the last digit. This trick is used to solve thi
 Read more: https://javarevisited.blogspot.com/2017/07/top-50-java-programs-from-coding-Interviews.html#ixzz5nDMNiTvU
  */
 public class Ex4_IntegerPalindrome {
-    public boolean solution(int number){
+    public boolean solution(int number) {
         int i = 10;
         int res = 0;
         int newNum = number;
         int rest = 0;
-        while(i<number){
-            rest = newNum%10;
-            res = res*10 + rest;
-            newNum=number/i;
-            i=i*10;
+        while (i < number) {
+            rest = newNum % 10;
+            res = res * 10 + rest;
+            newNum = number / i;
+            i = i * 10;
         }
-        res = res*10 +newNum;
-        return res==number;
+        res = res * 10 + newNum;
+        return res == number;
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
         Assert.assertThat(solution(1221), is(true));
         Assert.assertThat(solution(1001), is(true));
         Assert.assertThat(solution(0), is(true));

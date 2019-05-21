@@ -3,7 +3,8 @@ package com.interview.amazon;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.Objects;
+import java.util.Scanner;
 
 import static org.hamcrest.CoreMatchers.is;
 
@@ -48,16 +49,16 @@ public class Ex22_FindMiddleElementFromLinkedList {
         LinkedList.Node last = linkedList.head();
         Boolean i = true;
         int counter = 0;
-        while(i){
+        while (i) {
             last = last.next();
-            if (last != null){
+            if (last != null) {
                 counter++;
-            } else{
+            } else {
                 i = false;
             }
         }
         last = current;
-        for(int j=1;j<=counter/2;j++){
+        for (int j = 1; j <= counter / 2; j++) {
             last = last.next();
         }
         return last;
@@ -65,7 +66,7 @@ public class Ex22_FindMiddleElementFromLinkedList {
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
         LinkedList linkedList = new LinkedList();
         linkedList.head();
         linkedList.add(new LinkedList.Node("1"));
@@ -88,62 +89,62 @@ public class Ex22_FindMiddleElementFromLinkedList {
 }
 
 class LinkedList {
-        private Node head;
-        private Node tail;
+    private Node head;
+    private Node tail;
 
-        public LinkedList(){
-            this.head = new Node("head");
-            tail = head;
+    public LinkedList() {
+        this.head = new Node("head");
+        tail = head;
+    }
+
+    public Node head() {
+        return head;
+    }
+
+    public void add(Node node) {
+        tail.next = node;
+        tail = node;
+    }
+
+    public static class Node {
+        private Node next;
+        private String data;
+
+        public Node(String data) {
+            this.data = data;
         }
 
-        public Node head(){
-            return head;
+        public String data() {
+            return data;
         }
 
-        public void add(Node node){
-            tail.next = node;
-            tail = node;
+        public void setData(String data) {
+            this.data = data;
         }
 
-        public static class Node{
-            private Node next;
-            private String data;
-
-            public Node(String data){
-                this.data = data;
-            }
-
-            public String data() {
-                return data;
-            }
-
-            public void setData(String data) {
-                this.data = data;
-            }
-
-            public Node next() {
-                return next;
-            }
-
-            public void setNext(Node next) {
-                this.next = next;
-            }
-
-            public String toString(){
-                return this.data;
-            }
-
-            @Override
-            public boolean equals(Object o) {
-                if (this == o) return true;
-                if (o == null || getClass() != o.getClass()) return false;
-                Node node = (Node) o;
-                return Objects.equals(data, node.data);
-            }
-
-            @Override
-            public int hashCode() {
-                return Objects.hash(data);
-            }
+        public Node next() {
+            return next;
         }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
+
+        public String toString() {
+            return this.data;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Node node = (Node) o;
+            return Objects.equals(data, node.data);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(data);
+        }
+    }
 }

@@ -1,12 +1,9 @@
 package com.interview.amazon;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.hamcrest.CoreMatchers.is;
 
 /*
 A number is called an Armstrong number if it is equal to the cube of its each digit.
@@ -26,39 +23,39 @@ public class Ex6_AvoidDeadlock {
     }
 
 
-    public void solution(){
-        for(int i=0;i<1000;i++){
-            resource.add(i*100);
+    public void solution() {
+        for (int i = 0; i < 1000; i++) {
+            resource.add(i * 100);
         }
         Thread thread = new Thread(() -> {
             //while(!isAvailable);
-            isAvailable=false;
-            for (int i = 0; i<100;i++){
+            isAvailable = false;
+            for (int i = 0; i < 100; i++) {
                 resource.remove(i);
-                resource.add(i*1);
+                resource.add(i * 1);
             }
             System.out.println(resource);
-            isAvailable=true;
+            isAvailable = true;
         });
         Thread thread2 = new Thread(() -> {
             //while(!isAvailable);
-            isAvailable=false;
-            for (int i = 0; i<100;i++){
+            isAvailable = false;
+            for (int i = 0; i < 100; i++) {
                 resource.remove(i);
-                resource.add(i*2);
+                resource.add(i * 2);
             }
             System.out.println(resource);
-            isAvailable=true;
+            isAvailable = true;
         });
         Thread thread3 = new Thread(() -> {
             //while(!isAvailable);
-            isAvailable=false;
-            for (int i = 0; i<100;i++){
+            isAvailable = false;
+            for (int i = 0; i < 100; i++) {
                 resource.remove(i);
-                resource.add(i*3);
+                resource.add(i * 3);
             }
             System.out.println(resource);
-            isAvailable=true;
+            isAvailable = true;
         });
 
         thread.start();
@@ -67,7 +64,7 @@ public class Ex6_AvoidDeadlock {
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
 //        Assert.assertThat(solution(), is(true));
 //        Assert.assertThat(solution(0), is(true));
 //        Assert.assertThat(solution(1), is(true));

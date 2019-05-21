@@ -15,9 +15,9 @@ library method e.g. indexOf() or subString() so be prepared for that.
 Read more: https://javarevisited.blogspot.com/2017/07/top-50-java-programs-from-coding-Interviews.html#ixzz5nDOBEHcF
  */
 public class Ex3_StringPalindrome {
-    public boolean solution(String word){
+    public boolean solution(String word) {
         char[] chars = word.toLowerCase().trim().toCharArray();
-        for (int i = 0; i < chars.length/2; i++) {
+        for (int i = 0; i < chars.length / 2; i++) {
             char first = chars[i];
             char last = chars[chars.length - i - 1];
             chars[i] = last;
@@ -29,7 +29,7 @@ public class Ex3_StringPalindrome {
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
         Assert.assertThat(solution("bob"), is(true));
         Assert.assertThat(solution("arara"), is(true));
         Assert.assertThat(solution("heyah"), is(false));

@@ -3,7 +3,7 @@ package com.interview.amazon.glassdoor;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.Scanner;
 
 import static org.hamcrest.CoreMatchers.is;
 
@@ -19,19 +19,19 @@ public class LongestNonRepetitiveSubString {
     }
 
     public String solution(String word) {
-        if (word == null || word.length() == 0) return new String();
+        if (word == null || word.length() == 0) return "";
         String result = "";
         String newResult = "";
 
         char[] chars = word.toCharArray();
 
-        for(Character charac : chars){
-            if(result.indexOf(charac) >= 0){
+        for (Character charac : chars) {
+            if (result.indexOf(charac) >= 0) {
                 result = "";
             } else {
                 result += charac.toString();
             }
-            if(newResult.length() < result.length())
+            if (newResult.length() < result.length())
                 newResult = result;
         }
 

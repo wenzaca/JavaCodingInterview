@@ -27,46 +27,45 @@ from programming, coding and logic in these interviews.
 public class Ex18_StringAnagram {
 
     public static void main(String[] args) {
-        Scanner sc  = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("First word: ");
         String word1 = sc.next();
         System.out.print("Second word: ");
         String word2 = sc.next();
         Ex18_StringAnagram ex18_StringAnagram = new Ex18_StringAnagram();
-        System.out.println(ex18_StringAnagram.solution(word1,word2));
+        System.out.println(ex18_StringAnagram.solution(word1, word2));
     }
 
-    public Boolean solution(String word1, String word2){
-        if((word1 == null || word2 == null) || word1.length() != word2.length()) return false;
+    public Boolean solution(String word1, String word2) {
+        if ((word1 == null || word2 == null) || word1.length() != word2.length()) return false;
         char[] chars1 = word1.toLowerCase().toCharArray();
         char[] chars2 = word2.toLowerCase().toCharArray();
-        Map<Character,  Integer> map = new HashMap<>();
-        for(int i =0; i<word1.length();i++){
-            if (map.containsKey(chars2[i])){
-                if (map.get(chars2[i])==1) map.remove(chars2[i]);
-            } else{
-                map.put(chars2[i],2);
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < word1.length(); i++) {
+            if (map.containsKey(chars2[i])) {
+                if (map.get(chars2[i]) == 1) map.remove(chars2[i]);
+            } else {
+                map.put(chars2[i], 2);
             }
-            if (map.containsKey(chars1[i])){
-                if (map.get(chars1[i])==2) map.remove(chars1[i]);
-            } else{
-                map.put(chars1[i],1);
+            if (map.containsKey(chars1[i])) {
+                if (map.get(chars1[i]) == 2) map.remove(chars1[i]);
+            } else {
+                map.put(chars1[i], 1);
             }
         }
-        if (map.isEmpty()) return true;
-        return false;
+        return map.isEmpty();
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
 
         GregorianCalendar gc = new GregorianCalendar();
 
-        Assert.assertThat(solution("abcd","dcab"), is(true));
-        Assert.assertThat(solution("aabcd","dcbac"), is(false));
-        Assert.assertThat(solution("abcdefgh","fgabhcde"), is(true));
-        Assert.assertThat(solution(null,"asd"), is(false));
-        Assert.assertThat(solution("abcde","aabbcde"), is(false));
+        Assert.assertThat(solution("abcd", "dcab"), is(true));
+        Assert.assertThat(solution("aabcd", "dcbac"), is(false));
+        Assert.assertThat(solution("abcdefgh", "fgabhcde"), is(true));
+        Assert.assertThat(solution(null, "asd"), is(false));
+        Assert.assertThat(solution("abcde", "aabbcde"), is(false));
 
     }
 

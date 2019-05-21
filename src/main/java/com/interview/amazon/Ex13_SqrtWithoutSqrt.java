@@ -3,10 +3,6 @@ package com.interview.amazon;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -18,20 +14,20 @@ SQRT without using the math.sqrt
 public class Ex13_SqrtWithoutSqrt {
 
     public static void main(String[] args) {
-        Scanner sc  = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Integer number = Integer.parseInt(sc.next());
         Ex13_SqrtWithoutSqrt ex13_SqrtWithoutSqrt = new Ex13_SqrtWithoutSqrt();
         ex13_SqrtWithoutSqrt.solution(number);
     }
 
-    public Double solution(int number){
+    public Double solution(int number) {
         Double sqrt = 0d, divisor = 0d;
 
-        sqrt = number/2d;
+        sqrt = number / 2d;
 
-        do{
+        do {
             divisor = sqrt;
-            sqrt = (divisor + (number/divisor))/2;
+            sqrt = (divisor + (number / divisor)) / 2;
         } while ((divisor - sqrt) != 0);
         System.out.println(sqrt);
         return sqrt;
@@ -39,7 +35,7 @@ public class Ex13_SqrtWithoutSqrt {
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
 
         Assert.assertThat(solution(4), is(Math.sqrt(4)));
         Assert.assertThat(solution(5), is(Math.sqrt(5)));

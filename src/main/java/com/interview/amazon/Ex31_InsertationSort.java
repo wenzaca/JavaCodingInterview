@@ -25,7 +25,7 @@ public class Ex31_InsertationSort {
      */
 
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         // unsorted integer array
         Integer[] unsorted = {6, 5, 3, 1, 8, 7, 2, 4};
@@ -40,20 +40,20 @@ public class Ex31_InsertationSort {
 
     }
 
-    private void solution(Integer[] numbers){
+    private void solution(Integer[] numbers) {
 
-        if(numbers == null || numbers.length==0) return;
+        if (numbers == null || numbers.length == 0) return;
 
         int posInitial = 1;
 
 
-        while(posInitial < numbers.length){
+        while (posInitial < numbers.length) {
             int counter = 0;
-            for(int i = posInitial-1;i>=0;i--){
-                if(numbers[i]>numbers[posInitial-counter]) {
+            for (int i = posInitial - 1; i >= 0; i--) {
+                if (numbers[i] > numbers[posInitial - counter]) {
                     int temp = numbers[i];
-                    numbers[i] = numbers[posInitial-counter];
-                    numbers[posInitial-counter] = temp;
+                    numbers[i] = numbers[posInitial - counter];
+                    numbers[posInitial - counter] = temp;
                 }
                 counter++;
             }
@@ -80,10 +80,10 @@ public class Ex31_InsertationSort {
         solution(array6);
 
 
-        Assert.assertArrayEquals(array1, new Integer[]{1,2,3,4,5});
-        Assert.assertArrayEquals(array2, new Integer[]{1,2,3,4,5});
-        Assert.assertArrayEquals(array3, new Integer[]{1,2,3,4,5,6});
-        Assert.assertArrayEquals(array4, new Integer[]{1,2,3,4});
+        Assert.assertArrayEquals(array1, new Integer[]{1, 2, 3, 4, 5});
+        Assert.assertArrayEquals(array2, new Integer[]{1, 2, 3, 4, 5});
+        Assert.assertArrayEquals(array3, new Integer[]{1, 2, 3, 4, 5, 6});
+        Assert.assertArrayEquals(array4, new Integer[]{1, 2, 3, 4});
         Assert.assertArrayEquals(array5, new Integer[]{});
         Assert.assertArrayEquals(array6, null);
 

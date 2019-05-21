@@ -25,29 +25,29 @@ Read more: https://javarevisited.blogspot.com/2012/04/java-program-to-reverse-nu
 public class Ex20_ReverseNumber {
 
     public static void main(String[] args) {
-        Scanner sc  = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Integer number = Integer.parseInt(sc.next());
         Ex20_ReverseNumber ex20 = new Ex20_ReverseNumber();
         System.out.println(ex20.solution(number));
     }
 
-    public int solution(int number){
+    public int solution(int number) {
         int i = 10;
         int res = 0;
         int newNum = number;
         int rest = 0;
-        while(i<number){
-            rest = newNum%10;
-            res = res*10 + rest;
-            newNum=number/i;
-            i=i*10;
+        while (i < number) {
+            rest = newNum % 10;
+            res = res * 10 + rest;
+            newNum = number / i;
+            i = i * 10;
         }
-        res = res*10 +newNum;
+        res = res * 10 + newNum;
         return res;
     }
 
     @Test
-    public void testSolution(){
+    public void testSolution() {
         Assert.assertThat(solution(1221), is(1221));
         Assert.assertThat(solution(1001), is(1001));
         Assert.assertThat(solution(0), is(0));
