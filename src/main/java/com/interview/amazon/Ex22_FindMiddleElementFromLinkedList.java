@@ -9,7 +9,7 @@ import java.util.Scanner;
 import static org.hamcrest.CoreMatchers.is;
 
 /*
-ow do you find the middle element of LinkedList in one pass is a programming question often asked
+How do you find the middle element of LinkedList in one pass is a programming question often asked
 Java and non-Java programmers in telephonic Interview. This question is similar to checking palindrome
 or calculating the factorial, where Interviewer sometimes also ask to write code. In order to answer
 this question candidate must be familiar with LinkedList data structure i.e. In the case of singly

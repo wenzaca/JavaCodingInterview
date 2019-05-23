@@ -7,7 +7,12 @@ import java.util.*;
 
 import static org.hamcrest.CoreMatchers.is;
 
+/*
+Find the pair of numbers in the array that adds up to the given input number.
+ */
 public class ArraySumEquals {
+
+    // Time complexity is O(n^2)
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

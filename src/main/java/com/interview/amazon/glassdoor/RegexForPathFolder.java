@@ -14,6 +14,8 @@ Given input string which represents path (foo/bar/$id), how would you write a fu
  */
 public class RegexForPathFolder {
 
+    // Time complexity O(1)
+
     final String regex = "\\/?\\w+\\/\\w+\\/(.*)";
 
     public static void main(String[] args) {
@@ -26,13 +28,13 @@ public class RegexForPathFolder {
     }
 
     public String solution(String word) {
+        if(word == null || word.length() == 0) return "";
         final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
         final Matcher matcher = pattern.matcher(word);
         String result = "";
-        while (matcher.find()) {
-            for (int i = 1; i <= matcher.groupCount(); i++) {
-                result = matcher.group(i);
-            }
+        if (matcher.find()) {
+            result = matcher.group(1);
+
         }
         return result;
     }
@@ -44,5 +46,7 @@ public class RegexForPathFolder {
         Assert.assertThat(solution("/test/slash/begin"), is("begin"));
         Assert.assertThat(solution("test/123"), is(""));
         Assert.assertThat(solution("///test"), is(""));
+        Assert.assertThat(solution(""), is(""));
+        Assert.assertThat(solution(null), is(""));
     }
 }

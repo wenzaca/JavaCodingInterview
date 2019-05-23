@@ -7,7 +7,13 @@ import java.util.Scanner;
 
 import static org.hamcrest.CoreMatchers.is;
 
+/*
+Write a function to calculate pow(x,y). i.e x^y.
+ */
 public class Exponential {
+
+    // Time complexity is O(n)
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Integer number = Integer.parseInt(sc.next());

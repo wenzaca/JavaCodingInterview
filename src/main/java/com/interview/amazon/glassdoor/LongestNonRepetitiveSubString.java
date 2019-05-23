@@ -7,7 +7,12 @@ import java.util.Scanner;
 
 import static org.hamcrest.CoreMatchers.is;
 
+/*
+Given a String find the longest sub sequence of non repeating characters
+ */
 public class LongestNonRepetitiveSubString {
+
+    // Time Complexity is O(n)
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
