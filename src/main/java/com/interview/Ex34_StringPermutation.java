@@ -25,36 +25,26 @@ public class Ex34_StringPermutation {
 
     public static void main(String[] args) {
 
-//        // unsorted integer array
-//        Integer[] unsorted = {6, 5, 3, 1, 8, 7, 2, 4};
-//        System.out.println("Unsorted array :" + Arrays.toString(unsorted));
-//
-//        Ex34_StringPermutation ex31_insertationSort = new Ex34_StringPermutation();
-//        // sorting integer array using quicksort algorithm
-//        ex31_insertationSort.solution(unsorted);
-//
-//        // printing sorted array
-//        System.out.println("Sorted array :" + Arrays.toString(unsorted));
-
-    }
-
-    private void solution(String word) {
-        permutation(word);
+        solution("abcd");
 
 
     }
 
-    public static void permutation(String input) {
-        permutation("", input);
+    public static void solution(String word) {
+        permutation(word, "");
+
+
     }
+
 
     private static void permutation(String perm, String word) {
-        if (word.isEmpty()) {
-            System.err.println(perm + word);
-        } else {
-            for (int i = 0; i <= word.length(); i++) {
-                permutation(perm + word.charAt(i), word.substring(0, i) + word.substring(i + 1));
-            }
+        if (perm.isEmpty()) {
+            System.out.println(word);
+            return;
+        }
+        for (int i = 0; i < perm.length(); i++) {
+            permutation(perm.substring(0, i) + perm.substring(i + 1), word + perm.charAt(i));
+
         }
     }
 
