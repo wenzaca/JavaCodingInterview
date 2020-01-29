@@ -1,4 +1,4 @@
-package main.java.com.interview.crackinginterview.arraystraings;
+package com.interview.crackinginterview.arraystrings;
 
 import org.junit.Assert;
 import org.junit.Test;

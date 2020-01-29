@@ -1,4 +1,4 @@
-package main.java.com.interview.crackinginterview.arraystraings;
+package com.interview.crackinginterview.arraystrings;
 
 import java.util.HashMap;
 import java.util.Map;
